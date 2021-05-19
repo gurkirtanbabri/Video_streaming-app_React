@@ -53,7 +53,7 @@ export const NavLinkWrapper = styled.div`
   animation-name: ${navAnimation};
   animation-duration: 0.5s;
   overflow: hidden;
-  ${({show}) => show && css`
+  ${({show}) => !show && css`
     animation-name: ${reverseNavAnimation};
     width: 0%;
   ` }
@@ -64,11 +64,20 @@ export const NavLinkWrapper = styled.div`
   ${media.greaterThan('md')`
   flex-direction: row;
   height: 65px;
+  padding: 0px 30px;
   `}
+
+  ${media.greaterThan('md')`
+  overflow: visible;
+  width: 60%;
+`}
 `
 export const Navlinks = styled.div`
     ${media.greaterThan('md')`
     display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+}
   `}
 `
 export const Logo = styled.img`
@@ -139,17 +148,28 @@ export const MenuWrapper = styled.div`
   border-right: 10px solid transparent;
   border-left: 10px solid transparent;
   border-bottom: none;
+  ${media.greaterThan('md')`
+  transform: rotate(180deg);
+    top: -9px;
+    bottom: auto;
+  `}
   }
 
-  ${({show}) => show && css`
+  ${({show}) => !show && css`
     animation-name: ${ReverseAnimation};
-    opacity: 0
+    opacity: 0;
+    display: none;
   ` }
 
+  ${media.greaterThan('md')`
+    flex-direction: column-reverse;
+    top: 50px;
+`}
 `
 
 
 export const MenuItem = styled.p`
   display: block;
+  cursor: pointer;
 `
 

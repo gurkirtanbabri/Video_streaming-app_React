@@ -69,14 +69,14 @@ const Navbar = () => {
       </Navlinks>
 
       <MenuContainer>
-        <AccountWrapper>
+        <AccountWrapper 
+          onClick={(e) => {
+            e.preventDefault();
+            setState({...state,showAccountMenu: !showAccountMenu })
+          }}
+        >
           <AccountCircleIcon />
-          <NavlinkText
-            onClick={(e) => {
-              e.preventDefault();
-              setState({...state,showAccountMenu: !showAccountMenu })
-            }}
-          >
+          <NavlinkText>
             Account
           </NavlinkText>
         </AccountWrapper>

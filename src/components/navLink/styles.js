@@ -46,9 +46,10 @@ export const IconWrapper = styled.div`
       ${media.greaterThan('md')`
     margin: 0px;
     overflow: hidden;
-    animation: ${Bounce} 0.5s linear 0s infinite alternate;
 
-    
+	${Wrapper}:hover & {
+    animation: ${Bounce} 0.5s linear 0s infinite alternate;
+	}
   `}
 `
 
