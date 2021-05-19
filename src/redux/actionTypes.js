@@ -1,0 +1,7 @@
+
+
+export const Types = {
+  GET_LIST_INIT: 'GET_LIST_INIT',
+  GET_LIST_FAIL: 'GET_LIST_FAIL',
+  GET_LIST_SUCCESS: 'GET_LIST_SUCCESS',
+}
