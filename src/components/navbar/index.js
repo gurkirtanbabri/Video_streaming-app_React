@@ -19,8 +19,11 @@ import {
   MenuItem,
   Burger
  } from './styles';
+import { useDispatch } from 'react-redux';
+import { showModal } from '../../redux/actions/Modal';
 
 const Navbar = () => {
+  const dispatch = useDispatch()
   const [state, setState] = useState({
     showNavbar: false,
     showAccountMenu: false
@@ -83,8 +86,19 @@ const Navbar = () => {
           <MenuWrapper
             show={showAccountMenu}
           >
-            <MenuItem>Signin</MenuItem>
-            <MenuItem>SIgnout</MenuItem>
+            <MenuItem onClick={(e) => {
+              e.preventDefault();
+              setState({...state,showAccountMenu: !showAccountMenu })
+              dispatch(showModal("signin"))
+              }}>
+                Signin
+              </MenuItem>
+            <MenuItem  onClick={(e) => {
+              e.preventDefault();
+              setState({...state,showAccountMenu: !showAccountMenu })
+              dispatch(showModal("signup"))
+              }}>Signup</MenuItem>
+            <MenuItem  onClick={() => dispatch(showModal("signout"))}>Signout</MenuItem>
             <MenuItem>Profile</MenuItem>
           </MenuWrapper>
 
