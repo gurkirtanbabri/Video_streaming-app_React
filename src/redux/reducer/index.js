@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux'
-import { ListReducer } from './pagging'
+import { ModalReducer } from './Modals'
 
 const  Rootreducer = combineReducers({
-  ListReducer
+  ModalReducer
 })
 
 export default  Rootreducer 
